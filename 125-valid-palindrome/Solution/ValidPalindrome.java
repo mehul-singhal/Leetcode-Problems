@@ -1,4 +1,3 @@
-import java.util.*;
 public class ValidPalindrome {
 
     public boolean isPalindromeBrute(String s) {
