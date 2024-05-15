@@ -33,6 +33,8 @@ public class twoSum {
     }
 
     public int[] twoSum3(int[] nums, int target){
+        //This is on2 solution don't use this
+        //just a glorified brute force
         for(int i = 1;i<nums.length;i++){
             for(int j = i; j<nums.length;j++){
                 if(nums[i] + nums[j-1] == target){
