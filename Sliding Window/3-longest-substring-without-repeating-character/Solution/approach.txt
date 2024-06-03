@@ -1,0 +1,20 @@
+Detailed Approach:
+Initialization:
+
+longestCount is initialized to 0 to keep track of the length of the longest substring without repeating characters.
+left is initialized to 0 as the starting point of the sliding window.
+charSet is a HashSet used to store unique characters within the current window.
+
+Iterating through the string:
+
+A for loop iterates through the string with the right pointer moving from the start to the end of the string.
+For each character s.charAt(right):
+If the character is already in charSet, it means there is a duplicate within the current window.
+To remove the duplicate, a while loop runs to remove characters from the left side of the window (incrementing left) until the duplicate character is removed.
+After ensuring the window contains only unique characters, the character at s.charAt(right) is added to charSet.
+The length of the current window is calculated as right - left + 1, and longestCount is updated if the current window length is greater than the previous longest length.
+
+
+Return the Result:
+
+After the for loop completes, longestCount contains the length of the longest substring without repeating characters.
