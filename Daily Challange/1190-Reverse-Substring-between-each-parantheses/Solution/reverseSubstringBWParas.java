@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class reverseSubstringBWParas {
     
     int i = 0;  // Index to keep track of the current position in the character array
@@ -35,3 +33,23 @@ public class reverseSubstringBWParas {
         System.out.println(obj.reverseSubstring(s));  // Call the method and print the result
     }
 }
+
+//Recurssion Tree for the funcn
+
+// reverseSubstring("(ed(et(oc))el)")
+// |
+// +-- helper("(ed(et(oc))el)")
+//     |
+//     +-- helper("ed(et(oc))el")  // sb = "ed"
+//         |
+//         +-- helper("et(oc))el")  // sb = "et"
+//             |
+//             +-- helper("oc))el")  // sb = "oc"
+//                 |
+//                 +-- returns "co"  // reverse of "oc"
+//             |
+//             +-- returns "ocet"  // "et" + "co" = "etco", reversed to "ocet"
+//         |
+//         +-- returns "tecode"  // "ed" + "ocet" = "edocet", reversed to "tecode"
+//     |
+//     +-- returns "leetcode"  // "tecode" + "el" = "tecodeel", reversed to "leetcode"
