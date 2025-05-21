@@ -45,6 +45,33 @@ public class rotateArray {
 
     //Implement jugling algorithm here
 
+    public static void rotateByDJuggling(int[] arr, int k){
+        int n = arr.length;
+        k %= n;
+        int cycles = gcd(n,k);
+        for(int i = 0; i<cycles; i++){
+            int startEle = arr[i];
+            int currentInd = i, nextIndx;
+            while(true){
+                nextIndx = (i+k)%n;
+                if(nextIndx == i) break;
+                arr[currentInd] = arr[nextIndx];
+                currentInd = nextIndx;                
+            }
+            arr[currentInd] = startEle;
+        }
+    }
+
+    public static int gcd(int a, int b){
+        while(b != 0){
+            int temp = b;
+            b = a%b;
+            a = temp;
+        }
+        return a;
+    }
+
+
     public static void main(String[] args) {
         rotateArray rr = new rotateArray();
         int[] nums = {1, 2, 3, 4, 5, 6, 7};
