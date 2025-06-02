@@ -13,6 +13,10 @@ public class sildingWindowBestTime {
         return maxP;
     }
 
+    //Problem you can confuse yourself with - So the idea here is not to find the days of buy and sell and then find the max profit
+    //Better way to tackle this problem will be that you keep finding the buy day and the max profit on each day after it. 
+    //The maxP will hold the maxP till now without considering when you bought or sold.
+
     public static void main(String[] args) {
         // 7,1,5,3,6,4
         sildingWindowBestTime s = new sildingWindowBestTime();
