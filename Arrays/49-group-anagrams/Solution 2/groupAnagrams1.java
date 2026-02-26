@@ -34,6 +34,7 @@ public class groupAnagrams1 {
         for(char c: s.toCharArray()){
             count[c - 'a']++;
         }
+        //This is creating a signature which is going to be same for all the anagrams.
         StringBuilder sb =  new StringBuilder();
         for(int i = 0; i<26;i++){
             sb.append((char) ('a'+i)).append(count[i]);
