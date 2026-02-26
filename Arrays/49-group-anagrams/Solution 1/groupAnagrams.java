@@ -21,15 +21,16 @@ public class groupAnagrams {
            char[] temp = s.toCharArray();
            Arrays.sort(temp);
            String sortedString = new String(temp);
-           if(map.containsKey(sortedString)){
-               map.get(sortedString).add(s);
-               map.put(sortedString, map.get(sortedString));
-           }
-           else{
-               List<String> start = new ArrayList<String>();
-               start.add(s);
-               map.put(sortedString, start);
-           }
+//           if(map.containsKey(sortedString)){
+//               map.get(sortedString).add(s);
+//               map.put(sortedString, map.get(sortedString));
+//           }
+//           else{
+//               List<String> start = new ArrayList<String>();
+//               start.add(s);
+//               map.put(sortedString, start);
+//           }
+           map.computeIfAbsent(sortedString, k -> new ArrayList<>()).add(s);
        }
 
         List<List<String>> listValues = List.copyOf(map.values());
